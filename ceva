@@ -3,7 +3,14 @@ $PSDefaultParameterValues['Stop-Process:ErrorAction'] = 'SilentlyContinue'
 
 write-host @'
 ***************** 
-Author: @Matei Musuroi
+Buna! Bine ati venit la Block Spotify! 
+Eu voi scoate orice fel de reclama, sau buton ce poate sa ii faca pe altii sa creada ca nu ai Spotify Premium
+***************** 
+'@
+
+write-host @'
+***************** 
+Autor: Matei Musuroi
 ***************** 
 '@
 
@@ -80,22 +87,6 @@ Remove-Item -LiteralPath "$PWD\xpui.zip"
 $spotifyInstalled = (Test-Path -LiteralPath $SpotifyExecutable)
 $update = $false
 	$update = $true
-if (-not $spotifyInstalled -or $update) {
-  Write-Host @'
-Downloading Latest Spotify full setup, please wait...
-'@
-  try {
-    $webClient.DownloadFile(
-      # Remote file URL
-      'https://download.scdn.co/SpotifyFullSetup.exe',
-      # Local file path
-      "$PWD\SpotifyFullSetup.exe"
-    )
-  } catch {
-    Write-Output $_
-    Pause
-    exit
-  }
   mkdir $SpotifyDirectory >$null 2>&1
   Write-Host 'Running installation...'
   Start-Process -FilePath "$PWD\SpotifyFullSetup.exe"
@@ -190,7 +181,6 @@ UI isn't changed.
         }
     }
 
-
 $tempDirectory = $PWD
 Pop-Location
 
@@ -200,5 +190,12 @@ Write-Host 'Patching Complete, starting Spotify...'
 Start-Process -WorkingDirectory $SpotifyDirectory -FilePath $SpotifyExecutable
 Write-Host 'Done.'
 
+write-host @'
+***************** 
+@mrpond message:
+#Thailand #ThaiProtest #ThailandProtest #freeYOUTH
+Please retweet these hashtag, help me stop dictator government!
+***************** 
+'@
 
 exit
