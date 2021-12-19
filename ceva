@@ -18,7 +18,7 @@ $SpotifyDirectory = "$env:APPDATA\Spotify"
 $SpotifyExecutable = "$SpotifyDirectory\Spotify.exe"
 $SpotifyApps = "$SpotifyDirectory\Apps"
 
-Write-Host 'Stopping Spotify...'`n
+Write-Host 'Inchid Spotify...'`n
 Stop-Process -Name Spotify
 Stop-Process -Name SpotifyWebHelper
 
@@ -39,7 +39,7 @@ try {
   exit
 }
 
-Write-Host 'Downloading latest patch (chrome_elf.zip)...'`n
+'Downloading latest patch (chrome_elf.zip)...'`n
 $webClient = New-Object -TypeName System.Net.WebClient
 try {
   $webClient.DownloadFile(
@@ -88,9 +88,9 @@ $spotifyInstalled = (Test-Path -LiteralPath $SpotifyExecutable)
 $update = $false
 	$update = $true
   mkdir $SpotifyDirectory >$null 2>&1
-  Write-Host 'Running installation...'
+  Write-Host 'Pornire Spotify...'
   Start-Process -FilePath "$PWD\SpotifyFullSetup.exe"
-  Write-Host 'Stopping Spotify...Again'
+  Write-Host 'Oprire Spotify...Din nou'
   while ((Get-Process -name Spotify -ErrorAction SilentlyContinue) -eq $null){
      #waiting until installation complete
      }
@@ -190,12 +190,7 @@ Write-Host 'Patching Complete, starting Spotify...'
 Start-Process -WorkingDirectory $SpotifyDirectory -FilePath $SpotifyExecutable
 Write-Host 'Done.'
 
-write-host @'
-***************** 
-@mrpond message:
-#Thailand #ThaiProtest #ThailandProtest #freeYOUTH
-Please retweet these hashtag, help me stop dictator government!
-***************** 
+write-host @'Gata. Am terminat!
 '@
 
 exit
